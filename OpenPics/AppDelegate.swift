@@ -28,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sharedCache = TMCache.sharedCache()
         sharedCache.diskCache.byteLimit = 104857600
         
-        let shared1 = ProviderController.Shared.Instance
-        let shared2 = ProviderController.Shared.Instance
-        
+        ProviderController.Shared.Instance.addProvider(LOCProvider(fromProviderType: ProviderTypeLOC))
         
         return true
     }

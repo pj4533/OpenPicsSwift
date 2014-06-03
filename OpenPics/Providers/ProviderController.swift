@@ -13,4 +13,12 @@ class ProviderController: NSObject {
     struct Shared {
         static var Instance: ProviderController = ProviderController()
     }
+    
+    var providers = Provider[]()
+    func addProvider(provider: Provider) {
+        if provider.isConfigured {
+            self.providers.append(provider)
+        }
+    }
+    
 }

@@ -14,4 +14,5 @@
 #import "TMCache.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworkActivityLogger.h"
+#import "AFHTTPSessionManager.h"
 

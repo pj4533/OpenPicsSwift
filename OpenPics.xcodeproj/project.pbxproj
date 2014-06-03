@@ -10,6 +10,7 @@
 		0A500D2D193E353300642B90 /* ProviderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A500D2C193E353300642B90 /* ProviderController.swift */; };
 		0A500D2F193E3F8B00642B90 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A500D2E193E3F8B00642B90 /* Provider.swift */; };
 		0A500D32193E44D300642B90 /* LOCProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A500D31193E44D300642B90 /* LOCProvider.swift */; };
+		0A500D34193E4ED700642B90 /* LOCSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A500D33193E4ED700642B90 /* LOCSessionManager.swift */; };
 		0A8D6722193D65AB00DFEFFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8D6721193D65AB00DFEFFF /* AppDelegate.swift */; };
 		0A8D6724193D65AB00DFEFFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8D6723193D65AB00DFEFFF /* ViewController.swift */; };
 		0A8D6727193D65AB00DFEFFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8D6725193D65AB00DFEFFF /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		0A500D2C193E353300642B90 /* ProviderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderController.swift; sourceTree = "<group>"; };
 		0A500D2E193E3F8B00642B90 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0A500D31193E44D300642B90 /* LOCProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCProvider.swift; sourceTree = "<group>"; };
+		0A500D33193E4ED700642B90 /* LOCSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCSessionManager.swift; sourceTree = "<group>"; };
 		0A8D671C193D65AB00DFEFFF /* OpenPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8D6720193D65AB00DFEFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8D6721193D65AB00DFEFFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				0A500D31193E44D300642B90 /* LOCProvider.swift */,
+				0A500D33193E4ED700642B90 /* LOCSessionManager.swift */,
 			);
 			path = LOC;
 			sourceTree = "<group>";
@@ -112,7 +115,6 @@
 				0A8D6725193D65AB00DFEFFF /* Main.storyboard */,
 				0A8D6728193D65AB00DFEFFF /* Images.xcassets */,
 				0A8D671F193D65AB00DFEFFF /* Supporting Files */,
-				0A8D6744193DFB7600DFEFFF /* OpenPics-Bridging-Header.h */,
 			);
 			path = OpenPics;
 			sourceTree = "<group>";
@@ -120,6 +122,7 @@
 		0A8D671F193D65AB00DFEFFF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0A8D6744193DFB7600DFEFFF /* OpenPics-Bridging-Header.h */,
 				0A8D6720193D65AB00DFEFFF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A500D32193E44D300642B90 /* LOCProvider.swift in Sources */,
+				0A500D34193E4ED700642B90 /* LOCSessionManager.swift in Sources */,
 				0A500D2F193E3F8B00642B90 /* Provider.swift in Sources */,
 				0A8D6724193D65AB00DFEFFF /* ViewController.swift in Sources */,
 				0A8D6722193D65AB00DFEFFF /* AppDelegate.swift in Sources */,

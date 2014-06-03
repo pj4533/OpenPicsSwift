@@ -12,6 +12,7 @@
 		0A8D6727193D65AB00DFEFFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8D6725193D65AB00DFEFFF /* Main.storyboard */; };
 		0A8D6729193D65AB00DFEFFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8D6728193D65AB00DFEFFF /* Images.xcassets */; };
 		0A8D6735193D65AB00DFEFFF /* OpenPicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8D6734193D65AB00DFEFFF /* OpenPicsTests.swift */; };
+		CCF1C18421334DFA8267CCB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15A57305DB4B95B8CC9A1C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,9 @@
 		0A8D672E193D65AB00DFEFFF /* OpenPicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenPicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8D6733193D65AB00DFEFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8D6734193D65AB00DFEFFF /* OpenPicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPicsTests.swift; sourceTree = "<group>"; };
+		0A8D6744193DFB7600DFEFFF /* OpenPics-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenPics-Bridging-Header.h"; sourceTree = "<group>"; };
+		67E8A1B9F9644F7682FFDD57 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		7C15A57305DB4B95B8CC9A1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF1C18421334DFA8267CCB9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,8 @@
 				0A8D671E193D65AB00DFEFFF /* OpenPics */,
 				0A8D6731193D65AB00DFEFFF /* OpenPicsTests */,
 				0A8D671D193D65AB00DFEFFF /* Products */,
+				67E8A1B9F9644F7682FFDD57 /* Pods.xcconfig */,
+				43D5F2C5B3A543549C3ECDFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +87,7 @@
 				0A8D6725193D65AB00DFEFFF /* Main.storyboard */,
 				0A8D6728193D65AB00DFEFFF /* Images.xcassets */,
 				0A8D671F193D65AB00DFEFFF /* Supporting Files */,
+				0A8D6744193DFB7600DFEFFF /* OpenPics-Bridging-Header.h */,
 			);
 			path = OpenPics;
 			sourceTree = "<group>";
@@ -109,6 +117,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		43D5F2C5B3A543549C3ECDFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C15A57305DB4B95B8CC9A1C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A8D6738193D65AB00DFEFFF /* Build configuration list for PBXNativeTarget "OpenPics" */;
 			buildPhases = (
+				B1F2B22689534E76B7F25BFB /* Check Pods Manifest.lock */,
 				0A8D6718193D65AB00DFEFFF /* Sources */,
 				0A8D6719193D65AB00DFEFFF /* Frameworks */,
 				0A8D671A193D65AB00DFEFFF /* Resources */,
+				B734572C149C43358580F0DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +221,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B1F2B22689534E76B7F25BFB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B734572C149C43358580F0DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A8D6718193D65AB00DFEFFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,6 +332,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/OpenPics/OpenPics-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,6 +369,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/OpenPics/OpenPics-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -324,6 +377,7 @@
 		};
 		0A8D6739193D65AB00DFEFFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67E8A1B9F9644F7682FFDD57 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -335,6 +389,7 @@
 		};
 		0A8D673A193D65AB00DFEFFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67E8A1B9F9644F7682FFDD57 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -399,6 +454,7 @@
 				0A8D673A193D65AB00DFEFFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A8D673B193D65AB00DFEFFF /* Build configuration list for PBXNativeTarget "OpenPicsTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +463,7 @@
 				0A8D673D193D65AB00DFEFFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

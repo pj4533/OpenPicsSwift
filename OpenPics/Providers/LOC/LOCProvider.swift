@@ -16,4 +16,5 @@ class LOCProvider: Provider {
         self.providerName = "Library of Congress"
         self.supportsInitialSearching = true
     }
+    
 }

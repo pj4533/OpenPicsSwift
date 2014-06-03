@@ -21,4 +21,9 @@ class Provider: NSObject {
     var isConfigured: Bool {
         return true
     }
+    
+    func getItems(queryString: String,pageNumber: Int, success: (items: AnyObject[]!, canLoadMore: Bool!) -> (), failure: (error: NSError!) -> ()) {
+        
+    }
+
 }

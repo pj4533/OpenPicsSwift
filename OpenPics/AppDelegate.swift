@@ -29,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sharedCache.diskCache.byteLimit = 104857600
         
         ProviderController.Shared.Instance.addProvider(LOCProvider(fromProviderType: ProviderTypeLOC))
+
+//
+//        let derp = LOCProvider(fromProviderType: ProviderTypeLOC)
+//        derp.getItems("ok", pageNumber: 0, success:{ (items: AnyObject[]!, canLoadMore: Bool!) -> () in
+//            
+//        }, failure: { (error: NSError!) -> () in
+//                
+//        })
         
         return true
     }

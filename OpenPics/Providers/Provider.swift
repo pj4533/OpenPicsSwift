@@ -22,7 +22,7 @@ class Provider: NSObject {
         return true
     }
     
-    func getItems(queryString: String,pageNumber: Int, success: (items: AnyObject[]!, canLoadMore: Bool!) -> (), failure: (error: NSError!) -> ()) {
+    func getItems(queryString: String,pageNumber: Int, success: (items: ImageItem[]!, canLoadMore: Bool!) -> (), failure: (error: NSError!) -> ()) {
         
     }
 

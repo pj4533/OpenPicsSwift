@@ -30,13 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ProviderController.Shared.Instance.addProvider(LOCProvider(fromProviderType: ProviderTypeLOC))
 
-//
-//        let derp = LOCProvider(fromProviderType: ProviderTypeLOC)
-//        derp.getItems("ok", pageNumber: 0, success:{ (items: AnyObject[]!, canLoadMore: Bool!) -> () in
-//            
-//        }, failure: { (error: NSError!) -> () in
-//                
-//        })
+
+        let derp = LOCProvider(fromProviderType: ProviderTypeLOC)
+        derp.getItems("boston", pageNumber: 1, success:{ (items: ImageItem[]!, canLoadMore: Bool!) -> () in
+            
+        }, failure: { (error: NSError!) -> () in
+                
+        })
         
         return true
     }

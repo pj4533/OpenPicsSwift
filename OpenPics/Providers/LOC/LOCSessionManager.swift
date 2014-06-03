@@ -10,6 +10,7 @@ import UIKit
 
 var kLOCBaseURLString = "http://www.loc.gov/pictures/"
 
+// This seems to crash on use - see LOCProvider for details
 class LOCSessionManager: AFHTTPSessionManager {
    
     struct Shared {
@@ -19,7 +20,7 @@ class LOCSessionManager: AFHTTPSessionManager {
     init(baseURL url: NSURL!) {
         super.init(baseURL: url)
         let responseSerializer = AFJSONResponseSerializer()
-        responseSerializer.acceptableContentTypes = responseSerializer.acceptableContentTypes .setByAddingObject("text/plain")
+        responseSerializer.acceptableContentTypes = responseSerializer.acceptableContentTypes.setByAddingObject("text/plain")
         self.responseSerializer = responseSerializer
     }
 

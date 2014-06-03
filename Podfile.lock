@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Appsee (2.0.8)
   - FormatterKit (1.1.2):
     - FormatterKit/AddressFormatter
     - FormatterKit/ArrayFormatter
@@ -46,7 +45,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworkActivityLogger
   - AFNetworking
-  - Appsee (~> 2.0.8)
   - FormatterKit (~> 1.1.1)
   - FRDLivelyButton (~> 1.1.2)
   - KissXML
@@ -62,7 +60,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 45ca411593444cbdc401b12924b4c17082ad512a
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
-  Appsee: 80082e036888fbc7c81ddd2a14ce190553eee2f4
   FormatterKit: a7d9076e2923f272d098028f086822c329fcb410
   FRDLivelyButton: 717c6907bd6bb588f775a50580e216fe83abcade
   KissXML: e537c38b18ede903ee6de45953a9bd86c131ebe9

@@ -32,14 +32,16 @@ class ProviderCollectionViewController: UICollectionViewController {
         self.collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         let derpTest = ProviderController.Shared.Instance.providerByType(ProviderTypeLOC)
-        derpTest!.getItems("boston", pageNumber: 1, success:{ (items: ImageItem[]!, canLoadMore: Bool!) -> () in
-            
-            self.items = items
-            self.collectionView.reloadData()
-            
-            }, failure: { (error: NSError!) -> () in
-                println(error)
-            })
+        if derpTest {
+            derpTest!.getItems("", pageNumber: 1, success:{ (items: ImageItem[]!, canLoadMore: Bool!) -> () in
+                
+                self.items = items
+                self.collectionView.reloadData()
+                
+                }, failure: { (error: NSError!) -> () in
+                    println(error)
+                })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,11 +78,10 @@ class ProviderCollectionViewController: UICollectionViewController {
         let firstItem = self.items[0]
         println("url: \(firstItem.imageUrl)")
         
+        // why is imageView nil here?
+        var thisImageView = cell.imageView!
         
-        // init with reuseIdentifier not implemented on collectionviewcells
-        // but it is on tableviewcells?
-        cell.imageView.setImageWithURL(firstItem.imageUrl)
-        
+        thisImageView.setImageWithURL(firstItem.imageUrl)
         
         return cell
     }

@@ -10,10 +10,12 @@ import UIKit
 
 class ContentCell: UICollectionViewCell {
 
-    @IBOutlet var imageView: UIImageView
+    @IBOutlet var imageView : UIImageView
     
     override func prepareForReuse() {
-        imageView.image = nil
+        if imageView {
+            imageView.image = nil
+        }
     }
     
 }

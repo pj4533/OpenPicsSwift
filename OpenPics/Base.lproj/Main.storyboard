@@ -55,7 +55,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="imageView" destination="e6X-8Y-Sj7" id="6G2-0S-id4"/>
+                                    <outlet property="imageView" destination="e6X-8Y-Sj7" id="fl3-wz-C5Q"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

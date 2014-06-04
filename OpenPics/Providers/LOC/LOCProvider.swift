@@ -37,7 +37,7 @@ class LOCProvider: Provider {
                 let imageDict = itemDict["image"] as NSDictionary
                 if imageDict != nil {
                     
-                    let imageUrl = NSURL(string: imageDict["full"] as String)
+                    let imageUrl = NSURL(string: imageDict["thumb"] as String)
                     let opImageDict = [
                         "imageUrl" : imageUrl
                     ]

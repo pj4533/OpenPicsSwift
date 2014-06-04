@@ -18,19 +18,16 @@ class ProviderCollectionViewController: UICollectionViewController {
         super.init(coder: aDecoder)
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        var flowLayout = self.collectionView.collectionViewLayout as UICollectionViewFlowLayout
+        if ((self.traitCollection.horizontalSizeClass == .Compact)) {
+            flowLayout.itemSize = CGSizeMake(100.0, 100.0)
+        } else {
+            flowLayout.itemSize = CGSizeMake(250.0, 250.0)
+        }
+        
         let derpTest = ProviderController.Shared.Instance.providerByType(ProviderTypeLOC)
         if derpTest {
             derpTest!.getItems("", pageNumber: 1, success:{ (items: ImageItem[]!, canLoadMore: Bool!) -> () in
@@ -42,11 +39,6 @@ class ProviderCollectionViewController: UICollectionViewController {
                     println(error)
                 })
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // #pragma mark - Navigation

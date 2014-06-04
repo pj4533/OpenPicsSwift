@@ -29,7 +29,7 @@ class ProviderCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         let derpTest = ProviderController.Shared.Instance.providerByType(ProviderTypeLOC)
         if derpTest {
@@ -75,13 +75,9 @@ class ProviderCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView?, cellForItemAtIndexPath indexPath: NSIndexPath?) -> UICollectionViewCell? {
         let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as ContentCell
     
-        let firstItem = self.items[0]
-        println("url: \(firstItem.imageUrl)")
+        let item = self.items[indexPath!.item]
         
-        // why is imageView nil here?
-        var thisImageView = cell.imageView!
-        
-        thisImageView.setImageWithURL(firstItem.imageUrl)
+        cell.imageView.setImageWithURL(item.imageUrl)
         
         return cell
     }

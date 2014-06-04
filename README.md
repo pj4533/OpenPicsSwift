@@ -10,7 +10,7 @@ More details on OpenPics can be found in that repo.
 * Lots of closure use (success/failure etc)
 * Singletons :notsureif:
 * Collection Views
-* Custom Collection View Cells (Seems to be reuseIdentifier issue here)
+* Custom Collection View Cells
 
 ## Contact
 

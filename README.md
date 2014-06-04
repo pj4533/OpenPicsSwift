@@ -4,6 +4,8 @@ This is the complete re-write of [OpenPics](https://github.com/pj4533/OpenPics),
 
 More details on OpenPics can be found in that repo.
 
+![Screenshot](screenshots/screenshot.png "Screenshot")
+
 ## Swift Examples In This Project
 
 * Using Cocoapods (AFNetworking specifically)

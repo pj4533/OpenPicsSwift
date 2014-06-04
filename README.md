@@ -14,6 +14,13 @@ More details on OpenPics can be found in that repo.
 * Collection Views
 * Custom Collection View Cells
 
+## To Do
+
+* Detail pane with zooming
+* Hook up other providers
+* Hook up backend provider
+* Everything else
+
 ## Contact
 
 PJ Gray

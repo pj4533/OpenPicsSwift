@@ -1,25 +1,22 @@
 //
-//  ProviderCollectionViewController.swift
+//  ImageCollectionViewController.swift
 //  OpenPics
 //
-//  Created by PJ Gray on 6/3/14.
+//  Created by PJ Gray on 6/4/14.
 //  Copyright (c) 2014 Say Goodnight Software. All rights reserved.
 //
 
 import UIKit
 
-let reuseIdentifier = "generic"
+class ImageCollectionViewController: UICollectionViewController {
 
-class ProviderCollectionViewController: UICollectionViewController {
-
-    var items = ImageItem[]()
-    
-    init(coder aDecoder: NSCoder!) {
+    init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder)
     }
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        // Custom initialization
     }
 
     override func viewDidLoad() {
@@ -28,20 +25,7 @@ class ProviderCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-//        self.collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        let derpTest = ProviderController.Shared.Instance.providerByType(ProviderTypeLOC)
-        if derpTest {
-            derpTest!.getItems("", pageNumber: 1, success:{ (items: ImageItem[]!, canLoadMore: Bool!) -> () in
-                
-                self.items = items
-                self.collectionView.reloadData()
-                
-                }, failure: { (error: NSError!) -> () in
-                    println(error)
-                })
-        }
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,36 +33,35 @@ class ProviderCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    /*
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-
-        var imageVC = segue.destinationViewController as ImageCollectionViewController
-        imageVC.useLayoutToLayoutNavigationTransitions = true
     }
+    */
 
-// #pragma mark UICollectionViewDataSource
+    // #pragma mark UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView?) -> Int {
-
-        return 1
+        //#warning Incomplete method implementation -- Return the number of sections
+        return 0
     }
 
 
     override func collectionView(collectionView: UICollectionView?, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        //#warning Incomplete method implementation -- Return the number of items in the section
+        return 0
     }
 
     override func collectionView(collectionView: UICollectionView?, cellForItemAtIndexPath indexPath: NSIndexPath?) -> UICollectionViewCell? {
-        let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as ContentCell
+        let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
-        let item = self.items[indexPath!.item]
-        
-        cell.imageView.setImageWithURL(item.imageUrl)
-        
+        // Configure the cell
+    
         return cell
     }
 

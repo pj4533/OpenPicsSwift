@@ -10,4 +10,8 @@ import UIKit
 
 class ImageItem: NSObject {
     var imageUrl: NSURL?
+    
+    init(imageUrl url: NSURL!) {
+        self.imageUrl = url
+    }
 }

@@ -28,8 +28,25 @@ class LOCProvider: Provider {
         
         LOCSessionManager.Shared.Instance.GET("search", parameters: params, success: {
             (task: NSURLSessionDataTask!, responseObject: AnyObject!) -> () in
-            println(responseObject)
             
+            let dict = responseObject as NSDictionary
+            
+            let resultArray = dict["results"] as NSArray
+            var retArray = ImageItem[]()
+            for itemDict : AnyObject in resultArray {
+                let imageDict = itemDict["image"] as NSDictionary
+                if imageDict != nil {
+                    
+                    let imageUrl = NSURL(string: imageDict["full"] as String)
+                    let opImageDict = [
+                        "imageUrl" : imageUrl
+                    ]
+                    
+                    retArray.append(ImageItem(imageUrl: imageUrl))
+                }
+            }
+            
+            success(items: retArray, canLoadMore: false)
             
             }, failure: {
                 (task: NSURLSessionDataTask!, error: NSError!) -> () in

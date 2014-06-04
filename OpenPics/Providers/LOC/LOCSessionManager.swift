@@ -13,7 +13,7 @@ var kLOCBaseURLString = "http://www.loc.gov/pictures/"
 class LOCSessionManager: AFHTTPSessionManager {
    
     struct Shared {
-        static var Instance: LOCSessionManager = LOCSessionManager(baseURL: NSURL(string: kLOCBaseURLString))
+        static let Instance: LOCSessionManager = LOCSessionManager(baseURL: NSURL(string: kLOCBaseURLString))
     }
 
     init(baseURL url: NSURL!, sessionConfiguration configuration: NSURLSessionConfiguration!) {

@@ -11,14 +11,26 @@ import UIKit
 class ProviderController: NSObject {
 
     struct Shared {
-        static var Instance: ProviderController = ProviderController()
+        static let Instance: ProviderController = ProviderController()
     }
     
     var providers = Provider[]()
+    
     func addProvider(provider: Provider) {
         if provider.isConfigured {
             self.providers.append(provider)
         }
+    }
+    
+    func providerByType(providerType: String) -> Provider? {
+        
+        for thisProvider in providers {
+            if thisProvider.providerType == providerType {
+                return thisProvider
+            }
+        }
+        
+        return nil
     }
     
 }

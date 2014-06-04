@@ -4,6 +4,14 @@ This is the complete re-write of [OpenPics](https://github.com/pj4533/OpenPics),
 
 More details on OpenPics can be found in that repo.
 
+## Swift Examples In This Project
+
+* Using Cocoapods (AFNetworking specifically)
+* Lots of closure use (success/failure etc)
+* Singletons :notsureif:
+* Collection Views
+* Custom Collection View Cells (Seems to be reuseIdentifier issue here)
+
 ## Contact
 
 PJ Gray

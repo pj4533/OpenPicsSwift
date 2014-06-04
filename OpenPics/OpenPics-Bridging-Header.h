@@ -15,6 +15,8 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworkActivityLogger.h"
 
+#import "UIImageView+AFNetworking.h"
+
 // without full path here it crashes - filed a radar
 #import "/Users/pgray/projects/swift_OpenPics/OpenPics/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h"
 

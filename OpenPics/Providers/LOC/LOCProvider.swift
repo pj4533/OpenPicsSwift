@@ -26,20 +26,10 @@ class LOCProvider: Provider {
             "c" : "100"
         ]
         
-        // works if I use the base class directly
-        let locSessionManager: AFHTTPSessionManager = AFHTTPSessionManager(baseURL: NSURL(string: kLOCBaseURLString))
-        let responseSerializer = AFJSONResponseSerializer()
-        responseSerializer.acceptableContentTypes = responseSerializer.acceptableContentTypes.setByAddingObject("text/plain")
-        locSessionManager.responseSerializer = responseSerializer
-
-        // Crashes when using the derived class
-//        let locSessionManager: LOCSessionManager = LOCSessionManager(baseURL: NSURL(string: kLOCBaseURLString))
-        
-        // Can't use singleton either
-//        LOCSessionManager.Shared.Instance.GET("search", parameters: params, success: {
-        locSessionManager.GET("search", parameters: params, success: {
+        LOCSessionManager.Shared.Instance.GET("search", parameters: params, success: {
             (task: NSURLSessionDataTask!, responseObject: AnyObject!) -> () in
             println(responseObject)
+            
             
             }, failure: {
                 (task: NSURLSessionDataTask!, error: NSError!) -> () in

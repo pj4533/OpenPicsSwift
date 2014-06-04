@@ -14,5 +14,7 @@
 #import "TMCache.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworkActivityLogger.h"
-#import "AFHTTPSessionManager.h"
+
+// without full path here it crashes - filed a radar
+#import "/Users/pgray/projects/swift_OpenPics/OpenPics/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h"
 

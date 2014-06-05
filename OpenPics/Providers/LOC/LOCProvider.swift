@@ -27,7 +27,7 @@ class LOCProvider: Provider {
         ]
         
         LOCSessionManager.Shared.Instance.GET("search", parameters: params, success: {
-            (task: NSURLSessionDataTask!, responseObject: AnyObject!) -> () in
+            task, responseObject in
             
             let dict = responseObject as NSDictionary
             
@@ -48,8 +48,7 @@ class LOCProvider: Provider {
             
             success(items: retArray, canLoadMore: false)
             
-            }, failure: {
-                (task: NSURLSessionDataTask!, error: NSError!) -> () in
+            }, failure: {task, error in
                 println("ERROR")
                 println(error)
                 

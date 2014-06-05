@@ -30,12 +30,10 @@ class ProviderCollectionViewController: UICollectionViewController {
         
         let derpTest = ProviderController.Shared.Instance.providerByType(ProviderTypeLOC)
         if derpTest {
-            derpTest!.getItems("", pageNumber: 1, success:{ (items: ImageItem[]!, canLoadMore: Bool!) -> () in
-                
+            derpTest!.getItems("", pageNumber: 1, success:{ items,canLoadMore in
                 self.items = items
                 self.collectionView.reloadData()
-                
-                }, failure: { (error: NSError!) -> () in
+                }, failure: { error in
                     println(error)
                 })
         }

@@ -17,13 +17,11 @@ class ThumbnailCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         self.collectionView!.dataSource = dataSource
         let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
         
         // Force 4 items across, regardless of width -- has the side affect of making 3 across when launched in landscape and rotated
+        //TODO:  change in didRotate, similar to the full screen class
         let itemSize = (self.view.frame.width - 6) / 4
         layout.itemSize = CGSizeMake(itemSize, itemSize)
     }

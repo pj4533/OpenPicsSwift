@@ -11,7 +11,6 @@ import UIKit
 class ImageDataSource: NSObject, UICollectionViewDataSource {
 
     // MARK: UICollectionViewDataSource
-    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }

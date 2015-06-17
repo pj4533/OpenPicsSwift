@@ -4,5 +4,5 @@ Follow along as I attempt to rewrite [OpenPics](https://github.com/pj4533/OpenPi
 
 Blog Posts:
 
-[OpenPics in Swift: Part 1]()
+[OpenPics in Swift: Part 1](http://saygoodnight.com/2015/06/16/openpics-swift-1.html)
 

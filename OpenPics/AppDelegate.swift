@@ -2,34 +2,20 @@
 //  AppDelegate.swift
 //  OpenPics
 //
-//  Created by PJ Gray on 6/2/14.
-//  Copyright (c) 2014 Say Goodnight Software. All rights reserved.
+//  Created by PJ Gray on 6/15/15.
+//  Copyright © 2015 Say Goodnight Software. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-                            
+
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let urlCache: NSURLCache  = NSURLCache(memoryCapacity: 8 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
-        NSURLCache.setSharedURLCache(urlCache)
-        
-        AFNetworkActivityIndicatorManager.sharedManager().enabled = true
-        AFNetworkActivityLogger.sharedLogger().startLogging()
-        AFNetworkActivityLogger.sharedLogger().level = .AFLoggerLevelInfo
-        
-        // Disk limit is 100mb
-        let sharedCache = TMCache.sharedCache()
-        sharedCache.diskCache.byteLimit = 104857600
-        
-        ProviderController.Shared.Instance.addProvider(LOCProvider(fromProviderType: ProviderTypeLOC))
-        
         return true
     }
 

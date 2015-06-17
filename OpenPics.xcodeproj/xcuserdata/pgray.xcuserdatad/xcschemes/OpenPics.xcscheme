@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A8D671B193D65AB00DFEFFF"
+               BlueprintIdentifier = "0A994D241B2F5C420062D41D"
                BuildableName = "OpenPics.app"
                BlueprintName = "OpenPics"
                ReferencedContainer = "container:OpenPics.xcodeproj">
@@ -32,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A8D672D193D65AB00DFEFFF"
+               BlueprintIdentifier = "0A994D381B2F5C430062D41D"
                BuildableName = "OpenPicsTests.xctest"
                BlueprintName = "OpenPicsTests"
+               ReferencedContainer = "container:OpenPics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0A994D431B2F5C430062D41D"
+               BuildableName = "OpenPicsUITests.xctest"
+               BlueprintName = "OpenPicsUITests"
                ReferencedContainer = "container:OpenPics.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,12 +52,14 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0A8D671B193D65AB00DFEFFF"
+            BlueprintIdentifier = "0A994D241B2F5C420062D41D"
             BuildableName = "OpenPics.app"
             BlueprintName = "OpenPics"
             ReferencedContainer = "container:OpenPics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -57,11 +69,13 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0A8D671B193D65AB00DFEFFF"
+            BlueprintIdentifier = "0A994D241B2F5C420062D41D"
             BuildableName = "OpenPics.app"
             BlueprintName = "OpenPics"
             ReferencedContainer = "container:OpenPics.xcodeproj">
@@ -76,10 +90,11 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0A8D671B193D65AB00DFEFFF"
+            BlueprintIdentifier = "0A994D241B2F5C420062D41D"
             BuildableName = "OpenPics.app"
             BlueprintName = "OpenPics"
             ReferencedContainer = "container:OpenPics.xcodeproj">

@@ -10,20 +10,15 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class ThumbnailCollectionViewController: UICollectionViewController {
+class ThumbnailCollectionViewController: UICollectionViewController, UINavigationControllerDelegate {
 
     let dataSource = ImageDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.delegate = self
         self.collectionView!.dataSource = dataSource
-        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        // Force 4 items across, regardless of width -- has the side affect of making 3 across when launched in landscape and rotated
-        //TODO:  change in didRotate, similar to the full screen class
-        let itemSize = (self.view.frame.width - 6) / 4
-        layout.itemSize = CGSizeMake(itemSize, itemSize)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,13 +26,38 @@ class ThumbnailCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Navigation
+    // this overrides the deprecated willRotate function
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+        // this fixes the problem of rotation & then returning to this view controller.  for some reason
+        // it doesn't set the frame size properly, even though the size is sent in correctly.
+        if self.navigationController?.visibleViewController != self {
+            self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, size.width, size.height)
+        }
+        
+        self.collectionView!.collectionViewLayout.invalidateLayout()
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        // Force 4 items across, regardless of width
+        let itemSize = (self.collectionView!.frame.width - 6) / 4
+        return CGSizeMake(itemSize, itemSize)
+    }
+    
+    // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let vc = segue.destinationViewController as! FullScreenCollectionViewController
-        vc.collectionView!.dataSource = dataSource
-        vc.currentIndexPath = (self.collectionView!.indexPathsForSelectedItems()?.first)!
+        vc.useLayoutToLayoutNavigationTransitions = true
     }
 
+    // MARK: - UINavigaitonControllerDelegate
+    
+    // this is here because i need to know when the other collection view is shown, and set the delete.  by default
+    // layout to layout transitions use the root controllers delegate and data source
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if let vc = viewController as? UICollectionViewController {
+            vc.collectionView!.delegate = vc
+        }
+    }
 }

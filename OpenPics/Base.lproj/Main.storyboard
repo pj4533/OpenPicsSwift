@@ -56,7 +56,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="lXU-Fk-NNI" id="Xcg-fz-RDP"/>
-                                    <segue destination="mWh-Iv-ast" kind="show" id="eVN-7c-COJ"/>
+                                    <segue destination="I2P-Gh-Djy" kind="show" id="SHI-T0-8nc"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -71,51 +71,38 @@
             <point key="canvasLocation" x="326" y="254"/>
         </scene>
         <!--Full Screen Collection View Controller-->
-        <scene sceneID="I6v-cY-aqa">
+        <scene sceneID="S0P-Tk-d9Q">
             <objects>
-                <collectionViewController id="mWh-Iv-ast" customClass="FullScreenCollectionViewController" customModule="OpenPics" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="OWb-Yu-tnK">
+                <collectionViewController id="I2P-Gh-Djy" customClass="FullScreenCollectionViewController" customModule="OpenPics" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="5Bg-Rj-KFc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="Cu5-R9-umV">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="EZs-lD-7B1">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="nFO-ro-kTf" customClass="ImageCollectionViewCell" customModule="OpenPics" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QlN-S7-A1B">
                                 <rect key="frame" x="0.0" y="64" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNu-Ju-JhO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="fNu-Ju-JhO" firstAttribute="leading" secondItem="nFO-ro-kTf" secondAttribute="leadingMargin" constant="-8" id="UYT-dP-bTv"/>
-                                    <constraint firstItem="fNu-Ju-JhO" firstAttribute="top" secondItem="nFO-ro-kTf" secondAttribute="topMargin" constant="-8" id="YtJ-PG-BMA"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="fNu-Ju-JhO" secondAttribute="trailing" constant="-8" id="ggY-yW-jHa"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="fNu-Ju-JhO" secondAttribute="bottom" constant="-8" id="gnX-1Z-v8i"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="imageView" destination="fNu-Ju-JhO" id="aJY-BI-ZNi"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="delegate" destination="mWh-Iv-ast" id="GVt-Jt-E5A"/>
+                            <outlet property="dataSource" destination="I2P-Gh-Djy" id="qVB-CF-hTL"/>
+                            <outlet property="delegate" destination="I2P-Gh-Djy" id="W5j-gn-hDK"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rWt-aj-ZSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNT-Nt-ppg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="254"/>
+            <point key="canvasLocation" x="982" y="257"/>
         </scene>
     </scenes>
 </document>

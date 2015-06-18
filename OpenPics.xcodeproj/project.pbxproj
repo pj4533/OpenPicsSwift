@@ -105,8 +105,8 @@
 			children = (
 				0A994D281B2F5C420062D41D /* AppDelegate.swift */,
 				0A994D561B2F5DAC0062D41D /* ThumbnailCollectionViewController.swift */,
-				0A9A4E561B30F5A5000E6C5C /* ImageCollectionViewCell.swift */,
 				0A9A4E581B30F810000E6C5C /* FullScreenCollectionViewController.swift */,
+				0A9A4E561B30F5A5000E6C5C /* ImageCollectionViewCell.swift */,
 				0A9A4E5A1B30FC75000E6C5C /* ImageDataSource.swift */,
 				0A994D2C1B2F5C420062D41D /* Main.storyboard */,
 				0A994D2F1B2F5C420062D41D /* Assets.xcassets */,

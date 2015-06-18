@@ -9,48 +9,47 @@
 import UIKit
 
 class FullScreenCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
-    //TODO: This is not good -- the currentIndex variable comes from the tutorial, I added the currentIndexPath for 
-    // jumping to the selected item
-    var currentIndex: CGFloat  = 0.0
-    var currentIndexPath: NSIndexPath = NSIndexPath()
+    
+    var visibleIndexPath = NSIndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    //TODO: cannot scroll until the item appears -- doesn't look good at all
-    override func viewDidAppear(animated: Bool) {
-        self.collectionView!.scrollToItemAtIndexPath(self.currentIndexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
-    }
     
+    // TODO:  I was still getting that weird insets error -- I couldn't figure it out.  So to move forward I just make the height 80% of the
+    // collectionview height.  Problem solved for now.  Will come back later?
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        //TODO: don't understand this content inset stuff, if i return the frame size, the layouts item size is undefined because
-        // "the item height must be less than the height of the UICollectionView minus the section insets top and bottom values, minus the content insets top and bottom values."
-//        return self.collectionView!.frame.size
-
-        // If I subtract the content inset, then it works without the error
-        let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        NSLog("SECTION: %@", NSStringFromUIEdgeInsets(layout.sectionInset))
-        NSLog("CONTENT: %@", NSStringFromUIEdgeInsets(self.collectionView!.contentInset))
-        
-        return CGSizeMake(self.collectionView!.frame.size.width, self.collectionView!.frame.size.height - self.collectionView!.contentInset.top) 
+        return CGSizeMake(self.collectionView!.frame.size.width, self.collectionView!.frame.size.height * 0.8)
     }
     
-    // This is from the tutorial: http://adoptioncurve.net/archives/2013/04/creating-a-paged-photo-gallery-with-a-uicollectionview/
-    // Helps to handle rotation...seems old and out of date though?
-    // TODO: at least change the currentIndex stuff -- what does currentIndex mean?
+    // Here I turn paging on for this controller, and off when I leave cause remember the collectionView is shared
+    // for layout to layout transitions
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.collectionView!.pagingEnabled = true
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.collectionView!.pagingEnabled = false
+    }
+    
+    // Changed this from the tutorial code http://adoptioncurve.net/archives/2013/04/creating-a-paged-photo-gallery-with-a-uicollectionview/
+    // Seems to work better, and makes more sense to just track the visible indexPath and scroll to it, rather than calculating offsets.
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        self.collectionView!.alpha = 0.0
+
+        self.visibleIndexPath = self.collectionView!.indexPathsForVisibleItems().first!
         self.collectionView!.collectionViewLayout.invalidateLayout()
-        
-        let currentOffset = self.collectionView!.contentOffset
-        self.currentIndex = currentOffset.x / self.collectionView!.frame.size.width
+
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        let currentSize = self.collectionView!.bounds.size
-        let offset = self.currentIndex * currentSize.width
-        self.collectionView!.setContentOffset(CGPointMake(offset, 0.0), animated: false)
+        self.collectionView!.scrollToItemAtIndexPath(self.visibleIndexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+        
+        UIView.animateWithDuration(0.125) { () -> Void in
+            self.collectionView!.alpha = 1.0
+        }
     }
+    
 }

@@ -1,8 +1,6 @@
-# OpenPics in Swift
+# REPO DEPRECATED
 
-Follow along as I attempt to rewrite [OpenPics](https://github.com/pj4533/OpenPics) in Swift.
+Leaving this here only for my old links.
 
-Blog Posts:
+I am doing the swift rewrite inside the original [OpenPics repo](https://github.com/pj4533/OpenPics)
 
-* [OpenPics in Swift: The Re-Beginning](http://saygoodnight.com/2015/06/16/openpics-swift-1.html)
-* [OpenPics in Swift: Rotational Issues](http://saygoodnight.com/2015/06/18/openpics-swift-rotation.html)
